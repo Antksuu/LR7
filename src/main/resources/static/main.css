@@ -1,0 +1,30 @@
+html, body {
+    height: 100%;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
+}
+
+body.text-center {
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.form-signin {
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: auto;
+}
+
+.h1
+{
+	color: aqua;
+}

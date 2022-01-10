@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/main.css">
+  <link rel="stylesheet" href="/webjars/bootstrap/5.1.0/css/bootstrap.min.css">
+  <script type="text/javascript" src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+  <title>Login</title>
+</head>
+
+<body class="text-center" cz-shortcut-listen="true">
+  <main class="form-signin">
+    <form th:action="@{/login}" method="post">
+      <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+
+
+      <div class="form-floating">
+        <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Логин">
+        <label for="floatingInput">Login</label>
+      </div>
+      <div th:if="${param.error}">
+        Invalid login
+    </div>
+      <div class="form-floating">
+        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Пароль">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div th:if="${param.error}">
+        Wrong password please try again
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit"  >To come in</button>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember
+        </label>
+      </div>
+    </form>
+
+    <a class="w-100 btn btn-lg btn-primary" href="/registration">Registration</a>
+  </main>
+</body>
+</html>
