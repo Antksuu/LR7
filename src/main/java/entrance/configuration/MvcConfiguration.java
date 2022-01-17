@@ -13,8 +13,8 @@ import java.nio.file.Paths;
 @Configuration
 public class MvcConfiguration implements WebMvcConfigurer {
 
-	@Value("${upload.path}")
-	private String uploadPath;
+	/**@Value("${upload.path}")
+	private String uploadPath;*/
 
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/login").setViewName("login");

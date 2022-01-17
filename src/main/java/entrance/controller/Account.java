@@ -32,7 +32,7 @@ public class Account {
     }
 
     @GetMapping(value = "/account")
-    public String account(@AuthenticationPrincipal UserDetails user, @RequestParam("image") MultipartFile multipartFile,Model model) {
+    public String account(@AuthenticationPrincipal UserDetails user,/** @RequestParam("image") MultipartFile multipartFile,*/Model model) {
 
         User u = usersRepository.findByUsername(user.getUsername());
         u.updateCounter();

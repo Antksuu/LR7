@@ -52,8 +52,8 @@
 
             <div>
                 <label>Photos: </label>
-                <input type="file" name="image" accept="image/png, image/jpeg" class="form-control mb-4 col-4" placeholder="Изображение"/>
-                <img th:src="/@{${user.photosImagePath}}" />
+                 <input type="file" name="image" accept="image/png, image/jpeg" class="form-control mb-4 col-4"  multiple="multiple" placeholder="Изображение"/>
+
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Register now</button>
         </form>
