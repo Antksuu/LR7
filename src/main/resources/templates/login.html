@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма входа</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/login/login.css" th:href="@{/login/login.css}" media="screen" />
+
+</head>
+
+<body>
+    <main>
+        <div class="circle"></div>
+        <div class="register-form-container">
+            <form th:action="@{/login}" method="post" >
+                <span class="Sign-In p-b">Sign In</span>
+
+            <div class="container-but" >
+            <input  type="text" name="username" placeholder="Enter username...">
+           </div>
+          
+    
+            <div class="container-but" >
+            <input  type="password" name="password" placeholder="Enter password...">
+            </div>
+
+
+            <div class="container-but">
+            <button class="but"> Sign In</button>
+            </div>
+
+            <div class="container-but">
+                <a class="but1" th:href="@{/registration}" role="button"> Registration </a>
+                </div>
+
+            </form>  
+        </div>
+    </main>
+</body>
+
+</html>

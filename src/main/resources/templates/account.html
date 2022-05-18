@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/account/account.css" th:href="@{/account/account.css}" media="screen" />
+    
+    <title>Форма  личного профиля</title>
+</head>
+
+<body>
+<main>
+        <div class="circle"></div>
+         <div class="register-form-container">
+<form th:action="@{/account}" method="post" enctype="multipart/form-data">
+
+    <img th:src="${photosImagePath}"  class="avatar"/>
+   <span class="SPA" th:text="${currentUser.surname}"></span>
+         <span class="SPA" th:text="${currentUser.name}"></span>
+           <span class="SPA" th:text="${currentUser.patronymic}"></span>
+                <b class="SPA"> Количество посещений: &nbsp</b> <span class="SPA" th:text="${currentUser.counter}"></span>
+                            <div class="container-but">
+
+                                <a class="but" th:href="@{/}" role="button">To Home</a>
+                                </div>
+
+
+    <div class="box">
+        <p><a href="https://www.instagram.com/ksuu_724/" target="_blank">
+        <div class="imgzn"><img th:src="@{/image/Insta.jpeg}" class="imgzn">
+            </a></p>
+        </div>
+        <p><a href="https://web.telegram.org/z/" target="_blank">
+        <div class="imgzn"><img th:src="@{/image/Telega.jpeg}" class="imgzn">
+            </a></p>
+        </div>
+        <p><a href="https://vk.com/ksenia4975" target="_blank">
+        <div class="imgzn"><img th:src="@{/image/VK.jpeg}" class="imgzn">
+            </a></p>
+
+                </form>
+            </div>
+        </main>
+</body>
+
+</html>

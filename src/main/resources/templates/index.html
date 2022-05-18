@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../static/index/index.css" th:href="@{/index/index.css}" media="screen" />
+    <title>Форма главной страницы</title>
+</head>
+
+<body>
+    <main>
+        <div class="circle" >
+            <form action="/" method="post" >
+                <p><b class="Sign-In p-b"> Welcome &nbsp</b><span class="Sign-In p-b" th:text="${currentUser.name}"></span></p>
+
+                <div class="container-but">
+                    <a class="but" th:href="@{/account}" role="button">Private Office</a>
+                    </div>
+
+                    <div  class="container-but">
+                        <a class="but" th:href="@{update/{id}(id=${currentUser.id})}" role="button">Updata</a>
+
+                        </div>
+
+                        <div class="container-but">
+                            <a class="but" th:href="@{/login}" role="button">Exit</a>
+                            </div>
+
+            </form>  
+        </div>
+    </main>
+</body>
+
+</html>
