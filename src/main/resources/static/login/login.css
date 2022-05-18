@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+input {
+   
+    border-radius: 200px;
+    padding-left: 25px;
+    font-family: SourceSansPro-Bold;
+    font-size: 16px;
+    color: #4b2354;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 62px;
+    background: 0 0;
+    padding: 0 20px 0 23px;
+    border: none;
+    box-shadow: 0px 0px 30px 10px rgba(120, 109, 122, 0.5);
+  
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #ae70a9;
+}
+
+input:not(:focus):invalid {
+    border-color: #cf1212;
+}
+
+
+main {
+    background: #d7cddc;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    position: absolute;
+    z-index: 1;
+    width: 2534px;
+    height: 2534px;
+    border-radius: 50%;
+    background: #c4b6cb;/*цвет круга*/
+    box-shadow: 0px 4px 70px 6px rgba(217, 229, 255, 0.25);
+    animation-name: fadeCircle;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-delay: .3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeCircle {
+    0% {
+        width: 2534px;
+        height: 2534px;
+    }
+    25% {
+        width: 2000px;
+        height: 2000px;
+    }
+    50% {
+        width: 1500px;
+        height: 1500px;
+    }
+    75% {
+        width: 1000px;
+        height: 1000px;
+    }
+    100% {
+        width: 534px;
+        height: 534px;
+    }
+}
+
+.register-form-container {
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+    max-width: 415px;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 5px 5px 30px 20px rgba(121, 143, 189, 0.7);
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    animation-name: fadeForm;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1.4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
+}
+
+  
+@keyframes fadeForm {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: .25;
+    }
+    50% {
+        opacity: .5;
+    }
+    75% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+.divider {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #405D87;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+
+
+  .radio input { display: none; /* Прячем исходный переключатель */ }
+   .radio span {
+    position: relative; /* Относительное позиционирование */
+    display: inline-block; /* Строчно-блочный элемент */
+    width: 30px; height: 30px; /* Размеры */
+    background: #F5F5F5; /* Серый цвет фона */
+    border-radius: 30%; /* Круглый переключатель */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5); /* Тень внутри */
+   }
+   .radio input:checked + span { 
+    background: #264ac2; /* Красный цвет фона */
+   }
+   /* Добавляем белую точку по центру */
+   .radio input:checked + span::before { 
+    content: '';
+    position: absolute;
+    left: 6px; top: 6px;
+    background: #fff;
+    width: 18px; height: 18px;
+    border-radius: 30%;
+   }
+  
+   .Sign-In {
+    display: block;
+    font-family: SourceSansPro-Bold;
+    font-size: 30px;
+    color: #4b2354;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.p-b {
+    padding-bottom: 37px;
+}
+
+
+
+.but {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 50px;
+    background-color: #bd59d4;
+    border-radius: 25px;
+    font-family: SourceSansPro-SemiBold;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+    box-shadow: 0px 0px 30px 10px rgb(189 89 212 / 50%);
+    
+}
+
+.but:hover{
+    background-color: #4a2d51;
+    opacity: 0.9;
+}
+
+.but1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 50px;
+    background-color: #dccbdf;
+    border-radius: 25px;
+    font-family: SourceSansPro-SemiBold;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+    box-shadow: 0px 0px 30px 10px rgba(212, 176, 220, 0.5);
+    text-decoration: none;
+    
+}
+
+.but1:hover{
+    background-color: #9b8e9f;
+    opacity: 0.9;
+}
+
+button {
+    outline: none!important;
+    border: none;
+    background: 0 0;
+}
+
+.container-but {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+   
+}

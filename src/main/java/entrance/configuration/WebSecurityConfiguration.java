@@ -1,6 +1,4 @@
 package entrance.configuration;
-
-import entrance.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -24,7 +22,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.csrf()
 				.disable()
 			.authorizeRequests()
-				.antMatchers("/", "/registration", "/static/**", "/webjars/**").permitAll()
+				.antMatchers("/", "/templates/**","/style/**","/registration", "/static/**", "/webjars/**", "/JS/**","/login/**","/index/**","/account/**","/image/**").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()

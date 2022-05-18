@@ -1,10 +1,7 @@
 package entrance.controller;
-
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
-import java.util.Objects;
-
 import entrance.model.FileUploadUtil;
 import entrance.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import entrance.model.Role;
 import entrance.model.User;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.view.RedirectView;
+
 
 @Controller
 public class Registration {
@@ -40,8 +36,6 @@ public class Registration {
             return "registration";
         }
 
-
-
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         user.setPhotos(fileName);
         user.setActive(true);
@@ -51,10 +45,6 @@ public class Registration {
         String uploadDir = "user-photos/" + savedUser.getId();
 
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-        usersRepository.save(user);
         return "redirect:/login";
     }
-
-
-
 }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма регистрации</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../static/style/registration.css" th:href="@{/style/registration.css}" media="screen" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+<main>
+  <div class="circle"></div>
+  <div class="register-form-container">
+    <form th:action="@{/update}" th:object="${user}" method="post"
+          enctype="multipart/form-data">
+      <h1 class="form-title">
+        Update
+      </h1>
+
+      <div class="form-field">
+        <input readonly type="text" th:field="*{id}"  name="id" title="Ваше id">
+      </div>
+
+
+      <div class="form-fields">
+        <div class="form-field">
+          <input type="text" th:field="*{name}" name="name" placeholder="Enter your name..." required pattern="[а-яА-Я]+"
+                 title="Имя может содержать только буквы.">
+        </div>
+
+        <div class="form-field">
+          <input type="text" th:field="*{surname}" name="surname" placeholder="Enter last name..." required pattern="[а-яА-Я]+"
+                 title="Фамилия может содержать только буквы.">
+        </div>
+
+        <div class="form-field">
+          <input type="text" th:field="*{patronymic}" name="patronymic" placeholder="Enter patronymic..." required pattern="[а-яА-Я]+"
+                 title="Отчество может содержать только буквы.">
+        </div>
+
+        <div class="form-field">
+          <input readonly type="text" th:field="*{counter}" name="counter" title="Количество посещений">
+        </div>
+
+        <div class="form-field">
+          <input  type="text" th:field="*{username}" name="username" title="Логин изменить нельзя!">
+        </div>
+
+        <div class="form-field">
+          <input type="password" th:field="*{password}" name="password" id="password"  placeholder="Enter password..." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                 title="Должно содержать не менее одной цифры и одной прописной
+                        и строчной буквы, а также не менее 8 и более символов" required>
+        </div>
+        <div id="message">
+          <h3 class="message h">Пароль должен содержать следующее:</h3>
+          <p id="letter" class="invalid"><b>Буквы нижнего регистра</p>
+          <p id="capital" class="invalid">Буквы верхнего регистра</p>
+          <p id="number" class="invalid"><b>Числа</b></p>
+          <p id="length" class="invalid">Минимум 8 символов</b></p>
+
+        </div>
+        <div class="form-field">
+          <input type="file" name="image" accept="image/png, image/jpeg" multiple="multiple" />
+        </div>
+      </div>
+      <div class="form-buttons">
+        <button class="button button-google" type="submit">Обновить</button>
+
+      </div>
+      <script src="/JS/password.js"></script>
+
+</form>
+  </div>
+</main>
+</body>
+</html>
